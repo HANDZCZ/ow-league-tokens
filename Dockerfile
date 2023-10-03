@@ -6,7 +6,8 @@ RUN DEBIAN_FRONTEND=nointeractive && apt update -y && apt install -y wget xvfb g
 
 # Setup app
 WORKDIR /app
-COPY . .
+COPY ./src ./src
+COPY ./docker-entrypoint.sh ./requirements.txt ./
 RUN pip3 install -r requirements.txt
 
 RUN chmod +x docker-entrypoint.sh

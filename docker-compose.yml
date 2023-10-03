@@ -1,9 +1,11 @@
 version: "3.9"
 services:
   ow-league-tokens:
-    environment: ['DISPLAY=:99']
     volumes: ['./src/profiles:/app/src/profiles']
     build: .
-    # entrypoint: ['sleep', '10000']  # just for testing
+    environment:
+      PASSWORD: CHANGE_ME!
     entrypoint: ['/bin/sh', '-c', './docker-entrypoint.sh']
+    ports:
+      - 5900:5900
     restart: unless-stopped

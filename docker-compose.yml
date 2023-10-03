@@ -1,12 +1,12 @@
 version: "3.9"
 services:
   ow-league-tokens:
-    build: .
     environment:
       PASSWORD: CHANGE_ME!
     volumes:
       - ./profiles:/app/src/profiles
       - ./config.json:/app/src/config.json
+    image: handz/ow-league-tokens:latest
     entrypoint: ['/bin/sh', '-c', './docker-entrypoint.sh']
     ports:
       - 5900:5900

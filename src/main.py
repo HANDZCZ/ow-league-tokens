@@ -66,7 +66,6 @@ if __name__ == '__main__':
             config['profiles'] = args.profiles
         if args.docker:
             config['chromium_flags'].extend(DOCKER_CHROMIUM_FLAGS)
-            config['headless'] = False
         bootstrap(config, args.nowait)
     else:
         menu()

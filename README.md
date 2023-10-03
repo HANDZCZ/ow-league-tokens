@@ -10,9 +10,7 @@ To earn Contenders skins in the same automated fashion, try [this](https://githu
 
 <div align="center">
 
-[![Support my work](https://i.imgur.com/NOoWZ8G.png)](https://ko-fi.com/ucarno)
 [![Join Discord](https://i.imgur.com/dUQDNfo.png)](https://discord.gg/kkq2XY4cJM)
-[![Hire Me on Upwork](https://i.imgur.com/3jnH5ln.png)](https://www.upwork.com/freelancers/~012888e364d51bc0b2)
 
 </div>
 
@@ -87,9 +85,19 @@ This application supports Docker (sort of, I couldn't make profiles reusable),
 track progress on Docker support [here](https://github.com/ucarno/ow-league-tokens/issues/63)!
 You can either build it by using the supplied `docker-compose.yml` or `Dockerfile`.
 
-1. Clone this repository using `git clone https://github.com/ucarno/ow-league-tokens`
+1. Clone this repository using `git clone https://github.com/HANDZCZ/ow-league-tokens`
 2. Go to app's directory using `cd ow-league-tokens`
-3. Edit `docker-entrypoint.sh` to include your profile names if needed.
+3. Edit `config.json` to include your profile names if needed.\
+   example:
+```json
+{
+    "profiles": [
+        "default",
+        "idk1",
+        "idk2"
+    ],
+}
+```
 
 ### Docker Compose (recommended way if using Docker)
 1. Make sure Docker Compose is installed on your machine! More info [here](https://docs.docker.com/compose/).
@@ -99,7 +107,7 @@ You can either build it by using the supplied `docker-compose.yml` or `Dockerfil
 
 ### Dockerfile
 1. `docker build -t ow-league-tokens .` to build container using the Dockerfile. 
-2. `docker run -d -v ./src/profiles:/profiles ow-league-tokens:latest` to start new container using the image.
+2. `docker run -d -v ./profiles:/app/src/profiles ow-league-tokens:latest` to start new container using the image.
    * `docker container ls` to verify if container is running
    * `docker logs ow-league-tokens` to view container's logs
 
@@ -112,14 +120,11 @@ If you restart the app and see green "Authentication check has been passed" text
 At the current state, bot will watch ALL streams on OWL channel, no matter if they give tokens or not.
 I may implement watching only token-giving streams in the future.
 
-### Anything else?
-Then [open new issue](https://github.com/ucarno/ow-league-tokens/issues/new) and I will look into this.
-
 ## Contribution
 Feel free to contribute by
-[opening new issue](https://github.com/ucarno/ow-league-tokens/issues/new),
-[making a pull request](https://github.com/ucarno/ow-league-tokens/pulls) or
-[buying me a coffee](https://ko-fi.com/ucarno).
+- opening new issue
+- making a pull request
+
 Thanks to everyone for using this bot, contributing, leaving feedback and
 helping other people in [our Discord](https://discord.gg/kkq2XY4cJM)!
 

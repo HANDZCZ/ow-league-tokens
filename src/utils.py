@@ -36,6 +36,7 @@ def get_default_config() -> dict:
         'enable_owl': True,
         'enable_owc': False,
         'headless': False,
+        'exit_on_auth_fail': False,
         'shut_down': False,
         'debug': False,
         'time_delta': False,

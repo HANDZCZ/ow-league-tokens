@@ -209,6 +209,8 @@ def start_chrome(config: dict):
 
                 WebDriverWait(driver, 5000).until(EC.url_matches(YOUTUBE_AUTH_PASS_RE))
                 driver.get(NEW_TAB_URL)
+            if config["exit_on_auth_fail"]:
+                exit()
 
         elif driver.current_url.startswith(YOUTUBE_AUTH_PASS):
             driver_info(driver, '&gAuthentication check passed.')
